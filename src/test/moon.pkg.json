@@ -1,0 +1,9 @@
+{
+  "warn-list": "-unused_package",
+  "import": [
+    {
+      "path": "Penguinsltp/http_parser/src/lib",
+      "alias": "http_parser"
+    }
+  ]
+}

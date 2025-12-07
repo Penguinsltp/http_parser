@@ -1,0 +1,11 @@
+{
+  "is-main": true,
+  "import": [
+    {  
+      "path": "Penguinsltp/http_parser/src/lib",
+      "alias": "http_parser"
+    },
+    "moonbitlang/x/fs",
+    "moonbitlang/x/sys"
+  ]
+}

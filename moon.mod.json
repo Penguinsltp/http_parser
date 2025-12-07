@@ -1,0 +1,12 @@
+{
+  "name": "Penguinsltp/http_parser",
+  "version": "0.1.0",
+  "deps": {
+    "moonbitlang/x": "0.4.36"
+  },
+  "readme": "README.md",
+  "repository": "https://github.com/Penguinsltp/http_parser",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "description": ""
+}

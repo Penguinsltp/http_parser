@@ -1,0 +1,71 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "Penguinsltp/http_parser/src/lib"
+
+// Values
+pub fn header_value(Array[(String, String)], String) -> String?
+
+pub fn parse_message(String) -> Result[HttpMessage, HttpParserError]
+
+pub fn parse_request(String) -> Result[HttpRequest, HttpParserError]
+
+pub fn parse_response(String) -> Result[HttpResponse, HttpParserError]
+
+// Errors
+
+// Types and methods
+pub enum HttpMessage {
+  Request(HttpRequest)
+  Response(HttpResponse)
+}
+pub impl Eq for HttpMessage
+pub impl Show for HttpMessage
+
+pub enum HttpParserError {
+  EmptyMessage
+  MissingHeaderBodyBoundary
+  MissingRequestLine
+  MissingResponseLine
+  InvalidRequestLine(String)
+  InvalidResponseLine(String)
+  InvalidHttpVersion(String)
+  InvalidHeaderLine(String)
+  InvalidStatusCode(String)
+  InvalidContentLength(String)
+  IncompleteBody(expected~ : Int, actual~ : Int)
+  UnsupportedTransferEncoding(String)
+}
+pub impl Eq for HttpParserError
+pub impl Show for HttpParserError
+
+pub struct HttpRequest {
+  verb : String
+  target : String
+  version : HttpVersion
+  headers : Array[(String, String)]
+  body : String
+}
+pub impl Eq for HttpRequest
+pub impl Show for HttpRequest
+
+pub struct HttpResponse {
+  version : HttpVersion
+  status_code : Int
+  reason : String
+  headers : Array[(String, String)]
+  body : String
+}
+pub impl Eq for HttpResponse
+pub impl Show for HttpResponse
+
+pub struct HttpVersion {
+  major : Int
+  minor : Int
+}
+pub impl Eq for HttpVersion
+pub impl Show for HttpVersion
+
+// Type aliases
+pub type Header = (String, String)
+
+// Traits
+
